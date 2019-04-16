@@ -20,6 +20,13 @@
                         <strong>错误：</strong> {{Session::get('errorMsg')}}
                     </div>
                 @endif
+
+                <div class="note note-danger">
+                    <p>公告：仅展示最后一条有效的</p>
+                    <p>购买说明：标题随意填，简介不用填</p>
+                    <p>使用教程：标题随意填，简介不用填，排序1=Mac,2=Windows,3=Linux,4=iOS,5=Android,6=Games</p>
+                </div>
+
                 <!-- BEGIN PORTLET-->
                 <div class="portlet light bordered">
                     <div class="portlet-title">
@@ -42,6 +49,14 @@
                                             </label>
                                             <label class="mt-radio">
                                                 <input type="radio" name="type" value="2"> 公告
+                                                <span></span>
+                                            </label>
+                                            <label class="mt-radio">
+                                                <input type="radio" name="type" value="3"> 购买说明
+                                                <span></span>
+                                            </label>
+                                            <label class="mt-radio">
+                                                <input type="radio" name="type" value="4"> 使用教程
                                                 <span></span>
                                             </label>
                                         </div>

@@ -16,14 +16,15 @@
                         {{Session::get('successMsg')}}
                     </div>
                 @endif
-                @if (Session::has('errorMsg'))
+                @if($errors->any())
                     <div class="alert alert-danger">
-                        <button class="close" data-close="alert"></button>
-                        <strong>错误：</strong> {{Session::get('errorMsg')}}
+                        <span> {{$errors->first()}} </span>
                     </div>
                 @endif
                 <div class="note note-danger">
                     <p>警告：用户购买新套餐则会覆盖所有已购但未过期的旧套餐并删除这些旧套餐对应的流量，所以设置商品时请务必注意类型和有效期，流量包则可叠加。</p>
+                    <p>套餐：仅展示12个上架的商品</p>
+                    <p>流量：仅展示12个上架的商品</p>
                 </div>
                 <!-- BEGIN PORTLET-->
                 <div class="portlet light bordered">
@@ -120,15 +121,6 @@
                                         <span class="help-block"> 自动给购买此商品的用户打上相应的标签 </span>
                                     </div>
                                 </div>
-                                <!--
-                                <div class="form-group package-money">
-                                    <label class="control-label col-md-3">所需积分</label>
-                                    <div class="col-md-6">
-                                        <input type="text" class="form-control" name="score" value="0" id="score" placeholder="" required>
-                                        <span class="help-block">换购该商品需要的积分值</span>
-                                    </div>
-                                </div>
-                                -->
                                 <div class="form-group package-money">
                                     <label class="control-label col-md-3">有效期</label>
                                     <div class="col-md-6">
@@ -150,12 +142,12 @@
                                     <label for="color" class="col-md-3 control-label">颜色</label>
                                     <div class="col-md-6">
                                         <select class="form-control" name="color" id="color">
-                                            <option value="green">green</option>
-                                            <option value="blue">blue</option>
-                                            <option value="red">red</option>
-                                            <option value="purple">purple</option>
-                                            <option value="white">white</option>
-                                            <option value="grey">grey</option>
+                                            <option value="green">绿</option>
+                                            <option value="blue">蓝</option>
+                                            <option value="red">红</option>
+                                            <option value="purple">紫</option>
+                                            <option value="white">白</option>
+                                            <option value="grey">灰</option>
                                         </select>
                                     </div>
                                 </div>

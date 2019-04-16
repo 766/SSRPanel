@@ -89,8 +89,6 @@ Route::group(['middleware' => ['isForbidden', 'isLogin', 'isAdmin']], function (
     Route::post('subscribe/setSubscribeStatus', 'SubscribeController@setSubscribeStatus'); // 启用禁用用户的订阅
     Route::post('subscribe/setDeviceStatus', 'SubscribeController@setDeviceStatus'); // 是否允许设备订阅
     Route::get("marketing/emailList", "MarketingController@emailList"); // 邮件消息列表
-    Route::get("marketing/pushList", "MarketingController@pushList"); // 推送消息列表
-    Route::post("marketing/addPushMarketing", "MarketingController@addPushMarketing"); // 推送消息
     Route::get("admin/onlineIPMonitor", "AdminController@onlineIPMonitor"); // 在线IP监控
     Route::any("admin/decompile", "AdminController@decompile"); // SS(R)链接反解析
     Route::get('admin/download', 'AdminController@download'); // 下载转换过的JSON配置
@@ -99,7 +97,7 @@ Route::group(['middleware' => ['isForbidden', 'isLogin', 'isAdmin']], function (
     Route::get('admin/trafficLog', 'AdminController@trafficLog'); // 流量日志
     Route::get('admin/analysis', 'AdminController@analysis'); // 日志分析
     Route::get('admin/emailLog', 'AdminController@emailLog'); // 邮件发送日志
-    Route::get("payment/callbackList", "PaymentController@callbackList"); // 有赞云支付回调日志
+    Route::get("payment/callbackList", "PaymentController@callbackList"); // 支付回调日志
     Route::get("sensitiveWords/list", "SensitiveWordsController@sensitiveWordslist"); // 敏感词列表
     Route::post("sensitiveWords/add", "SensitiveWordsController@addSensitiveWords"); // 添加敏感词
     Route::post("sensitiveWords/del", "SensitiveWordsController@delSensitiveWords"); // 删除敏感词
@@ -112,8 +110,9 @@ Route::group(['middleware' => ['isForbidden', 'isLogin']], function () {
     Route::any('/', 'UserController@index'); // 用户首页
     Route::any('article', 'UserController@article'); // 文章详情
     Route::post('exchangeSubscribe', 'UserController@exchangeSubscribe'); // 更换节点订阅地址
+    Route::get('nodeList', 'UserController@nodeList'); // 节点列表
+    Route::post('checkIn', 'UserController@checkIn'); // 签到
     Route::get('services', 'UserController@services'); // 商品列表
-    Route::get('trafficLog', 'UserController@trafficLog'); // 流量日志
     Route::get('tickets', 'UserController@ticketList'); // 工单
     Route::post('addTicket', 'UserController@addTicket'); // 快速添加工单
     Route::any('replyTicket', 'UserController@replyTicket'); // 回复工单
@@ -125,7 +124,6 @@ Route::group(['middleware' => ['isForbidden', 'isLogin']], function () {
     Route::get('invite', 'UserController@invite'); // 邀请码
     Route::post('makeInvite', 'UserController@makeInvite'); // 生成邀请码
     Route::any('profile', 'UserController@profile'); // 修改个人信息
-    Route::post('exchange', 'UserController@exchange'); // 积分兑换流量
     Route::get('referral', 'UserController@referral'); // 推广返利
     Route::post('extractMoney', 'UserController@extractMoney'); // 申请提现
     Route::post("switchToAdmin", "UserController@switchToAdmin"); // 转换成管理员的身份

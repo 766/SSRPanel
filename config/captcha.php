@@ -2,35 +2,36 @@
 
 return [
 
-    'characters' => '2346789abcdefghjmnpqrtuxyzABCDEFGHJMNPQRTUXYZ',
+    'characters' => '123467890',
+    //'characters' => '2346789abcdefghjmnpqrtuxyzABCDEFGHJMNPQRTUXYZ',
 
-    'default'   => [
-        'length'    => 4,
-        'width'     => 90,
-        'height'    => 43,
-        'quality'   => 90,
-        'lines'     => 4,
+    'default' => [
+        'length'  => 4, // 启用科学计算后要改为 9
+        'width'   => 90,
+        'height'  => 43,
+        'quality' => 90,
+        'math'    => false, // 改为true，启用科学计算
     ],
 
-    'flat'   => [
-        'length'    => 6,
-        'width'     => 160,
-        'height'    => 46,
-        'quality'   => 90,
-        'lines'     => 6,
-        'bgImage'   => false,
-        'bgColor'   => '#ecf2f4',
-        'fontColors'=> ['#2c3e50', '#c0392b', '#16a085', '#c0392b', '#8e44ad', '#303f9f', '#f57c00', '#795548'],
-        'contrast'  => -5,
+    'flat' => [
+        'length'     => 6,
+        'width'      => 160,
+        'height'     => 46,
+        'quality'    => 90,
+        'lines'      => 6,
+        'bgImage'    => false,
+        'bgColor'    => '#ecf2f4',
+        'fontColors' => ['#2c3e50', '#c0392b', '#16a085', '#c0392b', '#8e44ad', '#303f9f', '#f57c00', '#795548'],
+        'contrast'   => -5,
     ],
 
-    'mini'   => [
-        'length'    => 3,
-        'width'     => 60,
-        'height'    => 32,
+    'mini' => [
+        'length' => 3,
+        'width'  => 60,
+        'height' => 32,
     ],
 
-    'inverse'   => [
+    'inverse' => [
         'length'    => 5,
         'width'     => 120,
         'height'    => 36,
@@ -41,6 +42,6 @@ return [
         'blur'      => 2,
         'invert'    => true,
         'contrast'  => -5,
-    ],
+    ]
 
 ];
